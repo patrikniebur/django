@@ -7,34 +7,14 @@
     <title>Django blog</title>
 </head>
 <body>
-    <ul>
-        <li>
-            <article>
-                <h1>
-                    <a href="#">post</a>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <em>author:</em><em>date</em>
-                </h1>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h1>
-                    <a href="#">post</a>
-                    <p>Cumque numquam a nihil ipsam.</p>
-                    <em>author:</em><em>date</em>
-                </h1>
-            </article>
-        </li>
-        <li>
-            <article>
-                <h1>
-                    <a href="#">post</a>
-                    <p>Modi quis qui ipsum beatae.</p>
-                    <em>author:</em><em>date</em>
-                </h1>
-            </article>
-        </li>
-    </ul>
+    <h1>Posts</h1>
+    {% for post in posts %}
+        <article>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+        {{ post }}
+    {% endfor %}
 </body>
 </html>
