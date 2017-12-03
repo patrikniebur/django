@@ -2,6 +2,9 @@
 {% block content %}
     <article>
         <p>{{ post.published_date }}</p>
+        <small>
+            <a href="{% url 'post_edit' pk=post.pk %}">Edit post</a>
+        </small>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text }}</p>
         <em>{{ post.author }}</em>
